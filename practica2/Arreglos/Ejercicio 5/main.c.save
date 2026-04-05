@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+void trasposicion(int m, int n,int A[m][n], int B[n][m],int C[n][m]);
+
+int main()
+{
+    int m,n;
+    m = 2; n = 3;
+
+
+    int matrix[m][n];
+    int matrix2[m][n];
+    int matrix3[m][n];
+    matrix[0][0] = 3;
+    matrix[0][1] = 2;
+    matrix[0][2] = 3;
+    matrix[1][0] = 3;
+    matrix[1][1] = 17;
+    matrix[1][2] = 11;
+
+    matrix2[0][0] = 4;
+    matrix2[0][1] = 2;
+    matrix2[0][2] = 5;
+    matrix2[1][0] = 7;
+    matrix2[1][1] = 4;
+    matrix2[1][2] = 1;
+
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("%d ", matrix2[i][j]);
+        }
+        printf("\n\n");
+    }
+
+    trasposicion(m, n, matrix, matrix2);
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("%d ", matrix2[i][j]);
+        }
+        printf("\n\n");
+    }
+
+    return 0;
+}
+
+void trasposicion(int m, int n, int A[m][n], int B[n][m], int C[n][m])
+{
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+            C[j][i] = B[j][i] + A[j][i];
+    }
+}

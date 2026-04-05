@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int main()
+{
+    int n;
+    for (n=0;n<11,n++)
+    {
+        raiz  = sqrt(n);
+        cubo = pow(n,3);
+        cuadrado = pow(n,2);
+        
+        printf("numero: %f \n", cuadrado);
+        printf("al cuadrado: %f \n", cuadrado);
+        printf("al cubo: %f \n", cubo):
+        printf("la raiz cuadrada: %f \n", raiz);
+    )
+    return 0;
+}

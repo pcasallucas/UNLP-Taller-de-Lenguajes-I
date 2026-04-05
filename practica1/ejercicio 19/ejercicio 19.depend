@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1773064111 source:c:\users\pcasa\documents\unlp-taller-de-lenguajes-i\practica1\ejercicio 19\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

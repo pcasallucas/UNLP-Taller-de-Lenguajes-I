@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int factorial(int num)
+{
+    int nuevo = 1,i;
+    for (i=1;i<=num;i++)
+    {
+        nuevo *= i;
+    }
+    return nuevo;
+}
+
+int factorial2(int num)
+{
+    if (!num)
+    {
+        return 1;
+    }
+    else
+    {
+        return num * factorial()
+    }
+}
+
+6 5 4 3 2 1
+6 5!
+
+int main()
+{
+    int num, nuevo;
+    printf("ingresar un numero entero: " );
+    scanf("%d", &num);
+    //nuevo = factorial(num);
+    nuevo = factorial2(num);
+    printf("resultado: %d \n", nuevo);
+    return 0;
+}

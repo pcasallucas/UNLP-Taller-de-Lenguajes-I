@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char word[15];
+    while (strcmp(word,"ZZZ"))
+    {
+        printf("ingrese una palabra: ");
+        scanf("%s", &word);
+    }
+    return 0;
+}

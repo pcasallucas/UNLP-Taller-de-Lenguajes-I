@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+int primos(int num)
+{
+    int i;
+    for (i=2; i<num; i++)
+    {
+        if ((i % num) == 0)
+        {
+            printf("%d no es primo", num);
+            return 1;
+        }
+    }
+    printf("es primo");
+    return 0;
+}
+
+int main()
+{
+    int num;
+    printf("ingresar un numero entero: " );
+    scanf("%d", num);
+    primos(num);
+    return 0;
+}

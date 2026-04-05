@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num1, num2;
+    char car;
+    printf("ingresar un numero\n");
+    scanf("d%", &num1);
+    printf("ingresar otro numero\n");
+    scanf("d%", &num2);
+    printf("ingresar un operador aritmetico: \n");
+    scanf("c%", &car);
+    switch  (car)
+    {
+        case +: printf("resultado de la operacion: %d", (num1 + num2));
+        case -: printf("resultado de la operacion: %d", (num1 - num2));
+        case /: printf("resultado de la operacion: %d", (num1 / num2));
+        case *: printf("resultado de la operacion: %d", (num1 * num2));
+        else printf("error")
+    }
+    return 0
+}

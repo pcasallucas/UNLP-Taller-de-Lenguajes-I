@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+void contador(int numeros [],int n);
+
+int main()
+{
+    int n;
+    int numeros[10] = {0};
+    printf("ingrese un numero: ");
+    scanf("%d", &n);
+    contador(numeros, n);
+    for (int i = 0; i <= 9; i++)
+    {
+        printf("%d) %d \n",i,numeros[i]);
+    }
+    return 0;
+}
+
+void contador(int numeros [],int n)
+{
+    while (n != 0)
+    {
+        int digit = (n % 10);
+        numeros[digit] ++;
+        n /= 10;
+    }
+}

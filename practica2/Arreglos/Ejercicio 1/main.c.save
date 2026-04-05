@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    int valor, contador1, contador2;
+    int vector [10];
+    srand(time(NULL));
+    int i;
+    for (i=0;i<10;i++)
+    {
+        valor = rand();
+        vector[i] = valor;
+    }
+    
+    for (i=0;i<10;i++)
+    {
+        printf("%d)")
+    }
+    
+    for (i=0;i<10;i++)
+    {
+        if ((i%2 == 0) && (vector[i]%2 != 0))
+        {
+            contador1++;
+        }
+        else
+        {
+            if ((vector[i]%2 == 0) && (i%2 != 0))
+            {
+                contador2++;
+            }
+        }
+    }
+    printf("\n los numeros impares en posiciones pares son %d",contador1);
+    printf("\n los numeros pares en posiciones impares son %d",contador2);
+    return 0;
+}

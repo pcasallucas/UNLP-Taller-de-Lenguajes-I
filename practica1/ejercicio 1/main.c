@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main ()
+{
+    int num;
+    for (num=0;num <= 50;num++)
+    {
+        if ((num % 5) == 0)
+        {
+            printf("%d ", num);
+        }
+    }
+    printf("\n");
+
+    for (num=0;num <= 50;num+=5)
+    {
+        printf("%d ", num);
+    }
+    return 0;
+}
