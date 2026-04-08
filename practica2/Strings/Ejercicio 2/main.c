@@ -6,22 +6,21 @@ int main()
 {
     int cant = 0;
     char word[15];
-    while ((strcmp(word,"ZZZ")) != 0)
+    while ((strcmp(word,"XXX")) != 0)
     {
-        int cont = 0; int i = 0;
+        int i = 0;
         printf("ingrese una palabra: ");
         scanf("%s", word);
         while (word[i] != 0)
         {
-            cont ++;
             i++;
         }
-        printf("cont: %d", cant);
-        if (cont >= 5)
+        if (word[i-1] == 'o')
         {
             cant ++;
         }
+        printf("cant: %d \t", cant);
     }
-    printf("%d", cant);
+    printf("\n %d", cant);
     return 0;
 }
