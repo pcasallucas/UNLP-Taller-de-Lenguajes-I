@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct rectangulo {
+ float base;
+ float altura;
+} rectangulo_t;
+
+void crear_rectangulo(rectangulo_t);
+float area_rectangulo(rectangulo_t);
+int menor_vect (rectangulo_t vector[]);
+
+int main()
+{
+    rectangulo_t vector [10];
+    for (int i; i < 10; i++)
+    {
+        crear_rectangulo(vector[i]);
+    }
+    int menor = menor_vect(vector);
+    printf("%d", menor);
+    return 0;
+}
+
+void crear_rectangulo(rectangulo_t rect)
+{
+    printf("ingrese la base del rectangulo: ");
+    scanf("%f", &rect.base);
+    printf("ingrese la altura del rectangulo: ");
+    scanf("%f", &rect.altura);
+}
+
+float area_rectangulo(rectangulo_t rect)
+{
+    return (rect.altura * rect.base);
+}
+
+int menor_vect (rectangulo_t vector[])
+{
+    int menor = 999;
+    for (int i; i < 10; i++)
+    {
+        if (area_rectangulo(vector[i]) < area_rectangulo(vector[menor]))
+        {
+            menor = i;
+        }
+        return menor
+    }
+}

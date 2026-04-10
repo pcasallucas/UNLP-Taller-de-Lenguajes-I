@@ -8,16 +8,14 @@ int main()
     char word[15];
     while ((strcmp(word,"ZZZ")) != 0)
     {
-        int cont = 0; int i = 0;
+        int i = 0;
         printf("ingrese una palabra: ");
         scanf("%s", word);
-        while (word[i] != 0)
+        while (word[i] != '/0')
         {
-            cont ++;
             i++;
         }
-        printf("cont: %d", cant);
-        if (cont >= 5)
+        if (i >= 5)
         {
             cant ++;
         }
