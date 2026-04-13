@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct estructura {
+    char calle [50];
+    char ciudad[30];
+    int codigo_postal;
+    char pais [40];
+} estructura_t;
+
+struct alu{
+    char apellido[50];
+    char nombre[50];
+    char legajo[8];
+    float promedio;
+    estructura_t direccion;
+}
+typedef struct alu alumno_t;
+
+alumno inicializar_alumno();
+alumno_t buscar_mayor(alumno_t vector []);
+
+int main()
+{
+    alumno_t ganador;
+    alumno_t vector[30];
+    for (int i = 0; i<=30; i++)
+    {
+        vector[i] = inicializar_alumno()
+    }
+    ganador = buscar_mayor(vector)
+    alumno_t a;
+
+    printf("Apellido: %S", ganador.apellido);
+
+    printf("Nombre: %s",ganador.nombre);
+
+    return 0;
+}
+
+alumno inicializar_alumno()
+{
+    alumno_t a;
+
+    printf("Apellido: ");
+    scanf("%49s", a.apellido);
+
+    printf("Nombre: ");
+    scanf("%49s", a.nombre);
+
+    printf("Legajo: ");
+    scanf("%d", &a.legajo);
+
+    printf("Promedio: ");
+    scanf("%f", &a.promedio);
+
+    printf("Calle: ");
+    scanf("%49s", a.direccion.calle);
+
+    printf("Ciudad: ");
+    scanf("%29s", a.direccion.ciudad);
+
+    printf("Codigo postal: ");
+    scanf("%d", &a.direccion.codigo_postal);
+
+    printf("Pais: ");
+    scanf("%39s", a.direccion.pais);
+
+    return a;
+}
+
+alumno_t buscar_mayor(alumno_t vector [])
+{
+    alumno_t ganador;
+    float mayor = -1;
+    for (int i = 0; i<=30; i++)
+    {
+        if vector[i].promedio > mayor
+        {
+            mayor = vector[i]. promedio;
+            ganador = vector[i]
+        }
+    }
+}
