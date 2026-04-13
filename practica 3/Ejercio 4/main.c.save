@@ -15,8 +15,7 @@ void imprimir(carta_t);
 int main()
 {
     srand(time(NULL));
-    carta_t mazo [50];
-
+    printf("Hello world!\n");
     return 0;
 }
 
@@ -48,6 +47,6 @@ void imprimir (carta_t card)
 {
     printf("CARTA: \n");
     printf("numero: %d\n", card.numero);
-    printf("palo: %s\n", card.palo);
+    printf("palo: %S\n", card.palo);
 }
 
