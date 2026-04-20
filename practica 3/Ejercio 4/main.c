@@ -16,7 +16,6 @@ int main()
 {
     srand(time(NULL));
     carta_t mazo [50];
-
     return 0;
 }
 

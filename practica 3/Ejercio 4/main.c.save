@@ -15,7 +15,34 @@ void imprimir(carta_t);
 int main()
 {
     srand(time(NULL));
-    printf("Hello world!\n");
+    carta_t mazo [50];
+    int k = 0;
+    char pal[7];
+    for (int i = 0; i <= 3; i++)
+    {
+        if (i == 1)
+        {
+            pal = "espada";
+        }
+        else if (i == 2)
+        {
+            pal = "basto";
+        }
+        else if (i == 3)
+        {
+            pal = "oro";
+        }
+        else if (i == 4)
+        {
+            pal = "copa";
+        }
+        for (int j = 1; j <= 12; j++)
+        {
+            mazo[k].numero = j;
+            mazo[k].palo = pal;
+            k++;
+        }
+    }
     return 0;
 }
 
@@ -47,6 +74,6 @@ void imprimir (carta_t card)
 {
     printf("CARTA: \n");
     printf("numero: %d\n", card.numero);
-    printf("palo: %S\n", card.palo);
+    printf("palo: %s\n", card.palo);
 }
 
