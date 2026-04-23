@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+typedef char string30 [30];
+typedef union{
+        int dni;
+        string30 pasaporte;
+    }id_t;
+
+typedef struct
+{
+    string30 apellido;
+    string30 nombre;
+    string30 legajo;
+    int tipo;
+    id_t id;
+
+} alumno_t;
+
+
+alumno_t inicializar();
+
+int main()
+{
+
+    return 0;
+}
+
+alumno_t inicializar()
+{
+    alumno_t a;
+    int opcion;
+
+    printf("Ingrese apellido: ");
+    scanf("%s", a.apellido);
+
+    printf("Ingrese nombre: ");
+    scanf("%s", a.nombre);
+
+    printf("Ingrese legajo: ");
+    scanf("%d", &a.legajo);
+
+    printf("Tipo de identificacion (1 = DNI, 2 = Pasaporte): ");
+    scanf("%d", &opcion);
+
+    if (opcion == 1)
+    {
+        printf("Ingrese DNI: ");
+        scanf("%d", &a.id.dni);
+    }
+    else
+    {
+        printf("Ingrese pasaporte: ");
+        scanf("%s", a.id.pasaporte);
+    }
+
+    return a;
+}
