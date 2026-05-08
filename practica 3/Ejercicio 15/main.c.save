@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct
+{
+    unsigned lado;
+} cuadrado_t;
+
+typedef struct
+{
+    unsigned lado : 16;
+    unsigned base : 16;
+} rectangulo_t;
+
+typedef struct
+{
+    unsigned radio;
+} circulo_t;
+
+typedef struct
+{
+    unsigned y : 16;
+    unsigned x : 16;
+} elipse_t;
+
+typedef struct
+{
+    unsigned hipotenusa : 17;
+    unsigned opuesto : ;
+    unsigned adjacente : 1;
+} triangulo_t;
+
+typedef union{
+    rectangulo_t rectangulo;
+    cuadrado_t cuadrado;
+    circulo_t circulo;
+    elipse_t elipse;
+    triangulo_t triangulo;
+} geometricas_t;
+
+typedef enum
+{
+    cuadrado,
+    rectangulo,
+    circulo,
+    elipse,
+    triangulo,
+}tipo_t;
+
+typedef struct
+{
+    geometricas_t geometricas;
+    tipo_t tipo;
+} estructura;
+
+int main()
+{
+    estructura figura;
+    int type;
+    printf("ingrese q figura es:\n");
+    printf("\t 1: cuadrado \n\t 2: rectangulo\n");
+    printf("\t 3: circulo\n\t 4: elipse\n\t 5: triangulo");
+    scanf("%d", type);
+    
+    return 0;
+}
