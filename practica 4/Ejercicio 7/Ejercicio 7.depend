@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1778646116 source:/home/luke/Documents/Facu/UNLP-Taller-de-Lenguajes-I/practica 4/Ejercicio 7/main.c
+	<stdio.h>
+	<stdlib.h>
+

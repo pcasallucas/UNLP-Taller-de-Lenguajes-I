@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void reservar(int num, float ** ptr);
+void calcular(int n, float * ptr);
+int main()
+{
+    int num;
+    float * lista;
+    printf("ingrese un valor entero: ");
+    scanf("%d", &num);
+    reservar(num, &lista);
+    calcular(num, lista);
+    free(lista);
+    return 0;
+}
+
+void reservar(int num, float ** ptr)
+{
+    *ptr = malloc(num*sizeof(float));
+    for (int i = 0; i < num; i++)
+    {
+        printf("ingrese un valor para v[%d]", i);
+        scanf("%f", &(*ptr)[i]);
+    }
+}
+
+void calcular(int n, float * v)
+{
+    float suma = 0;
+    for (int i = 0; i < n; i++)
+    {
+        suma += v[i];
+    }
+    printf("el promedio es: %f.", suma /n);
+}

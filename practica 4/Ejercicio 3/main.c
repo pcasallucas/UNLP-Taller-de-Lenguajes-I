@@ -22,6 +22,7 @@ int main()
     scanf("%d", &num);
     reservar(num, &lista);
     calcularMax(lista, num);
+    free(lista);
     return 0;
 }
 
@@ -47,5 +48,5 @@ void calcularMax(int * ptr, int num)
             max = ptr[i];
         }
     }
-    printf("el valor maaximo es %d", max);
+    printf("el valor maximo es %d", max);
 }

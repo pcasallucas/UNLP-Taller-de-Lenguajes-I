@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void reservar(char ** ptr);
+void leer(char * arreglo);
+void procesar(char * oracion);
+int main()
+{
+    char * lista;
+    reservar(&lista);
+    for (int i = 0; i<=10; i++)
+    {
+        leer(lista);
+    }
+    free(lista);
+    return 0;
+}
+
+void reservar(char ** ptr)
+{
+    *ptr = malloc(100*sizeof(char));
+}
+
+void leer(char * arreglo)
+{
+    printf("ingrese una oracion de maximo 100 caracteres: ");
+    fgets(arreglo,100,stdin);
+    procesar(arreglo);
+}
+
+void procesar(char * oracion)
+{
+    char letra;
+    int minusculas = 0;
+    int mayusculas = 0;
+    for (int i = 0;(oracion[i+1]!='\0'); i++)
+    {
+        letra = oracion[i];
+        if ((letra <= 'z') && (letra >= 'a'))
+        {
+            minusculas++;
+        }
+        if ((letra <= 'Z') && (letra >=
+         'A'))
+        {
+            mayusculas++;
+        }
+    }
+    printf("cantidad de minusculas: %d \n", minusculas);
+    printf("cantidad de mayusculas: %d \n", mayusculas);
+}
