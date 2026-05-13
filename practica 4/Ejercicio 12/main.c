@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int * reservar(int n, int m);
+void liberar(int * matriz);
+void inicializar(int * matriz, int n, int m);
+void imprimir(int * matriz, int n, int m);
+void multiplos(int * matriz, int n, int m, int num);
+
+int main()
+{
+    int filas, columnas;
+    printf("ingrese la cantidad de filas: ");
+    scanf("%d", &filas);
+    printf("ingrese la cantidad de columnas: ");
+    scanf("%d", &columnas);
+    int * matriz = reservar(filas, columnas);
+    inicializar(matriz, filas, columnas);
+    imprimir(matriz, filas, columnas);
+    multiplos(matriz, filas, columnas, 3);
+    liberar(matriz);
+    return 0;
+}
+
+int * reservar(int n, int m)
+{
+    int * matriz = calloc(m * n,sizeof(int));
+    return matriz;
+}
+
+void liberar(int * matriz)
+{
+    free(matriz);
+}
+
+void inicializar(int * matriz, int n, int m)
+{
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            printf("ingrese un valor para la posicion [%d][%d]: ", i,j);
+            scanf("%d", &matriz[i * m + j]);
+        }
+    }
+}
+
+void imprimir(int * matriz, int n, int m)
+{
+    for(int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("[%d] ", matriz[i * m + j]);
+        }
+
+        printf("\n");
+    }
+}
+
+void multiplos(int * matriz, int n, int m, int num)
+{
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            if ((matriz[i * m + j] % num) == 0)
+                printf("[%d][%d] es multiplo \n", i,j);
+        }
+    }
+}
